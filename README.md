@@ -64,8 +64,8 @@ If you'd like to contribute to this project, please follow these guidelines:
 
 Have questions or feedback? Feel free to reach out:
 
-- Your Francis Iwu
-- Your [iwufrancischisom20@gmail.com]
+- Name: Francis Iwu
+- Email: [iwufrancischisom20@gmail.com]
 - LinkedIn: [https://www.linkedin.com/in/francis-iwu-878973238/]
 - Portfolio: [https://francis-personalportfolio.netlify.app/]
 
