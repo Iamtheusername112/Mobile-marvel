@@ -1,9 +1,5 @@
 # Mobile Marvel
 
----
-
-# Mobile Marvel
-
 Mobile Marvel is an interactive web application developed to test and showcase your technical expertise in the world of smartphones and mobile devices. Whether you're a tech enthusiast, a developer, or just someone who loves gadgets, this app provides a fun and engaging way to challenge your knowledge about phones and their features.
 
 ## Features
