@@ -43,43 +43,47 @@ function App() {
   const getImageUrl = (imageFileName) => {
     return `/assets/images/${imageFileName}`;
   };
-
   return (
-    <div className="App">
-      <h1>Phone Catalog</h1>
+    <div className="bg-gray-100 min-h-screen p-4">
+      <h1 className="text-3xl font-semibold mb-4 text-center">Phone Catalog</h1>
       {isLoading ? (
-        <p>Loading...</p>
+        <p className="text-center">Loading...</p>
       ) : (
-        <div className="phone-container">
-          <div className="phone-list">
-            <h2>Phone Models</h2>
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/4 p-4 border-r border-gray-300">
+            <h2 className="text-xl font-semibold mb-2">Phone Models</h2>
             <ul>
               {phones.map((phone) => (
-                <li key={phone.id} onClick={() => handlePhoneSelect(phone.id)}>
+                <li
+                  key={phone.id}
+                  onClick={() => handlePhoneSelect(phone.id)}
+                  className="cursor-pointer hover:text-blue-600 mb-2"
+                >
                   {phone.name}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="phone-details">
-            <h2>Phone Details</h2>
+          <div className="w-full md:w-3/4 p-4">
+            <h2 className="text-xl font-semibold mb-2">Phone Details</h2>
             {isPhoneDetailsLoading ? (
-              <div className="loading-spinner"></div>
+              <div className="animate-spin h-16 w-16 md:h-32 md:w-32 mx-auto border-t-2 md:border-t-4 border-blue-500 rounded-full"></div>
             ) : selectedPhone ? (
               <>
                 <img
                   src={getImageUrl(selectedPhone.imageFileName)}
                   alt={selectedPhone.name}
+                  className="max-w-full h-auto mb-4 rounded-lg shadow-lg mx-auto"
                 />
-                <p>Name: {selectedPhone.name}</p>
+                <p className="text-lg font-semibold">{selectedPhone.name}</p>
                 <p>Brand: {selectedPhone.manufacturer}</p>
-                <p>Price: {selectedPhone.price}</p>
+                <p>Price: ${selectedPhone.price}</p>
                 <p>Processor: {selectedPhone.processor}</p>
                 <p>Screen: {selectedPhone.screen}</p>
-                <p>RAM: {selectedPhone.ram}</p>
+                <p>RAM: {selectedPhone.ram} GB</p>
               </>
             ) : (
-              <p>Select a phone to view details</p>
+              <p className="text-center">Select a phone to view details</p>
             )}
           </div>
         </div>
