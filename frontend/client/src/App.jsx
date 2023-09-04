@@ -41,7 +41,9 @@ function App() {
 
   // Function to generate the full image URL
   const getImageUrl = (imageFileName) => {
-    return `https://mobile-marvel.onrender.com/assets/images/${imageFileName}`;
+    // Replace the following URL with the actual URL where your images are hosted.
+    const baseUrl = "https://mobile-marvel.onrender.com"; // Update this URL
+    return `${baseUrl}/assets/images/${imageFileName}`;
   };
 
   return (
