@@ -11,7 +11,7 @@ function App() {
   // UseEffect
   useEffect(() => {
     axios
-      .get("http://localhost:7000/phones")
+      .get("https://mobile-marvel.onrender.com/phones")
       .then((res) => {
         setPhones(res.data);
         setIsLoading(false);
@@ -27,7 +27,7 @@ function App() {
     setSelectedPhone(null); // Clear selectedPhone while loading
     setTimeout(() => {
       axios
-        .get(`http://localhost:7000/phones/${phoneId}`)
+        .get(`https://mobile-marvel.onrender.com/phones/${phoneId}`)
         .then((response) => {
           setSelectedPhone(response.data);
           setIsPhoneDetailsLoading(false); // Set loading status back to false
@@ -41,8 +41,9 @@ function App() {
 
   // Function to generate the full image URL
   const getImageUrl = (imageFileName) => {
-    return `/assets/images/${imageFileName}`;
+    return `https://mobile-marvel.onrender.com/assets/images/${imageFileName}`;
   };
+
   return (
     <div className="bg-gray-100 min-h-screen p-4">
       <h1 className="text-3xl font-semibold mb-4 text-center">Phone Catalog</h1>
