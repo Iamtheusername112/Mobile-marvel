@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [phones, setPhones] = useState([]);
@@ -154,9 +155,11 @@ export default function Home() {
                 {pageItems.map((p) => (
                   <Card key={p.id} className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
                     <div className="relative overflow-hidden">
-                      <img 
+                      <Image 
                         src={`/images/${p.imageFileName}`} 
                         alt={p.name} 
+                        width={400}
+                        height={192}
                         className="h-48 w-full object-contain p-4 group-hover:scale-105 transition-transform duration-300" 
                       />
                       <div className="absolute top-2 right-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs font-semibold text-green-600">
@@ -239,9 +242,11 @@ export default function Home() {
                   ) : (
                     <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
                       <div className="relative">
-                        <img
+                        <Image
                           src={`/images/${selectedPhone.imageFileName}`}
                           alt={selectedPhone.name}
+                          width={280}
+                          height={280}
                           className="w-full h-auto rounded-lg shadow-lg"
                         />
                         <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-sm font-semibold">

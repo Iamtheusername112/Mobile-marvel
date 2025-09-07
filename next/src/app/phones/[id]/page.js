@@ -1,5 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import phonesData from "@/data/phones.json" assert { type: "json" };
+import Link from "next/link";
+import Image from "next/image";
 
 function getPhone(id) {
   const phoneId = parseInt(id, 10);
@@ -19,15 +21,17 @@ export default function PhonePage({ params }) {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <div className="mx-auto max-w-6xl p-6 space-y-8">
         <div className="flex items-center gap-4">
-          <a href="/" className="text-blue-600 hover:text-blue-700 font-medium">← Back to catalog</a>
+          <Link href="/" className="text-blue-600 hover:text-blue-700 font-medium">← Back to catalog</Link>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <div className="relative">
-              <img 
+              <Image 
                 src={`/images/${phone.imageFileName}`} 
                 alt={phone.name} 
+                width={600}
+                height={600}
                 className="w-full h-auto rounded-2xl shadow-2xl bg-white p-8" 
               />
               <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-2 rounded-full text-lg font-bold">
